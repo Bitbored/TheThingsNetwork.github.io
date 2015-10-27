@@ -3,10 +3,14 @@
 
 {% block header %}
             <div class="frontpage-small" style="background-image: url('{% if community.image_url %}{{ community.image_url }}{% else %}{% static 'ttn/media/examplecity-newyork.jpg' %}{% endif %}');">
-                <a href="{% url 'ttn:index' %}">
-                    <img class="logo" src="{% static 'ttn/media/The Things Uitlijning.svg' %}">
-                </a>
-                {% block author %}
-                {% endblock %}
+                <div class="header-content row">
+                    <a href="{% url 'ttn:index' %}">
+                        <img class="logo col-md-9" src="{% static 'ttn/media/The Things Uitlijning.svg' %}">
+                    </a>
+                    <div class="header-author col-md-9">
+                        {% block author %}
+                        {% endblock %}
+                    </div>
+                </div>
             </div>
 {% endblock %}
